@@ -54,5 +54,5 @@ class FeatureMatching:
         good = np.array(good).reshape(-1, )
         self.pts1 = np.float32([kp1[m.queryIdx].pt for m in good]).reshape(-1, 1, 2)
         self.pts2 = np.float32([kp2[m.trainIdx].pt for m in good]).reshape(-1, 1, 2)
-        return self.pts1, self.pts2
+        return self.pts1[:, 0, :], self.pts2[:, 0, :]
 

@@ -3,18 +3,13 @@ import cv2
 from normalization import Normalization
 
 class EssentialMatrix:
-    def __init__(self, pts1, pts2, K):
-        self.pts1 = pts1
-        self.pts2 = pts2
-        self.K = K
-
-    def find_essential_matrix(self):
-        E, mask = cv2.findEssentialMat(self.pts1, self.pts2, self.K, method=cv2.RANSAC, prob=0.999, threshold=1.0)
+    def find_essential_matrix(self, pts1, pts2, K):
+        E, mask = cv2.findEssentialMat(pts1, pts2, K, method=cv2.RANSAC, prob=0.999, threshold=1.0)
         E /= E[2, 2]
         return E, mask
 
-    def decompose_essential_matrix(self, E):
-        _, R, t, mask = cv2.recoverPose(E, self.pts1, self.pts2, self.K)
+    def decompose_essential_matrix(self, E, pts1, pts2, K):
+        _, R, t, mask = cv2.recoverPose(E, pts1, pts2, K)
         t = t.reshape(-1, )
         t = t / np.linalg.norm(t)
         return R, t, mask
