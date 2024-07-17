@@ -1,8 +1,6 @@
-courses
 venv
-main2.py
-removeOutliers.py
 .idea
 __pycache__
-ali_main.py
-Nicolai Nielsen
+dataset/h108_90.MP4
+dataset/frames
+dataset/drone_high_altitude

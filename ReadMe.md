@@ -1,4 +1,13 @@
 Visual odometry is a process used to estimate the motion of a camera through consecutive frames. Below is a general roadmap for visual odometry, including the purpose of each step, and the input and output of each step.
+## Overview
+This project is a simple implementation of visual odometry using various computer vision techniques.
+
+## Directory Structure
+- `config/`: Configuration files.
+- `dataset/`: All datasets you want to use for this project should place in this folder.
+- `lib/`: Libraries used in visual odometry.
+- `result/`: Result files of this project save here (like .ply file for 3D representation)
+- `utils/`: Utility scripts for visualization, generate outputs and dataset processing.
 
 ### General Steps of Visual Odometry
 
